@@ -6,8 +6,7 @@
 
 #--ptxas-options=\"-v -dlcm=cg\""
 
-extracflags="-march=native -D_REENTRANT -falign-functions=16 -falign-jumps=16 -falign-labels=16"
+extracflags="-D_FORCE_INLINES -march=native -D_REENTRANT -falign-functions=16 -falign-jumps=16 -falign-labels=16 -std=c++11"
 
-CUDA_CFLAGS="-O3 -lineno -Xcompiler -Wall  -D_FORCE_INLINES" \
-	./configure CXXFLAGS="-O3 $extracflags" --with-cuda=/usr/local/cuda --with-nvml=libnvidia-ml.so
-
+CUDA_CFLAGS="-O3 --compiler-bindir=/usr/bin/gcc-5 -std=c++11 -lineno -Xcompiler -Wall -D_FORCE_INLINES" \
+	./configure CXXFLAGS="-O3 $extracflags" --with-cuda=/opt/cuda --with-nvml=libnvidia-ml.so

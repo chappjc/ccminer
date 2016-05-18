@@ -2,7 +2,9 @@
 
 # Simple script to create the Makefile and build
 
-# export PATH="$PATH:/usr/local/cuda/bin/"
+export PATH="$PATH:/opt/cuda/bin/"
+export CC="gcc-5"
+export CXX="g++-5"
 
 make distclean || echo clean
 
